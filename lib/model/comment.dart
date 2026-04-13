@@ -1,11 +1,11 @@
 class Comment {
   int id;
-  int twwetId;
+  int tweetId;
   int userId;
   String contenido;
   Comment({
     required this.id,
-    required this.twwetId,
+    required this.tweetId,
     required this.userId,
     required this.contenido,
   });
