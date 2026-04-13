@@ -2,7 +2,7 @@ class Tweet {
   int id;
   int userId;
   String contenido;
-  List<String> likes;
+  List<int> likes;
 
   Tweet({
     required this.id,

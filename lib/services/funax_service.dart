@@ -37,7 +37,7 @@ class FunaxService {
             id: t['id'],
             userId: t['userId'],
             contenido: t['contenido'],
-            likes: List<String>.from(t['likes']),
+            likes: List<int>.from(t['likes']),
           ),
         )
         .toList();
@@ -94,6 +94,17 @@ class FunaxService {
     final index = tweets.indexWhere((element) => element.id == idTweet);
     if (index != -1) {
       tweets[index].contenido = nuevoContenido;
+    }
+  }
+
+  void deleteTweet(int idTweet) {
+    tweets.removeWhere((element) => element.id == idTweet);
+  }
+
+  void likeTweet(int idTweet, String username) {
+    final index = tweets.firstWhere((element) => element.id == idTweet);
+    if (!index.likes.contains(1)) {
+      index.likes.add(1);
     }
   }
 }
